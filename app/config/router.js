@@ -10,9 +10,15 @@ import Me from '../screens/Me';
 export const FeedStack = StackNavigator({
   Feed: {
     screen: Feed,
+    navigationOptions: {
+      title: 'Feed',
+    },
   },
   Details: {
     screen: UserDetail,
+    navigationOptions: ({ navigation }) => ({
+      title: `${navigation.state.params.name.first.toUpperCase()} ${navigation.state.params.name.last.toUpperCase()}`,
+    }),
   },
 });
 
@@ -35,4 +41,16 @@ export const Tabs = TabNavigator({
       },
     },
   },
+});
+
+export const Root = StackNavigator({
+  Tabs: {
+    screen: Tabs,
+  },
+  Settings: {
+    screen: Settings,
+  },
+}, {
+  mode: 'modal',
+  headerMode: 'none',
 });
