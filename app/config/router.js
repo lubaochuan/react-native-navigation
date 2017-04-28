@@ -43,12 +43,21 @@ export const Tabs = TabNavigator({
   },
 });
 
+export const SettingsStack = StackNavigator({
+  Settings: {
+    screen: Settings,
+    navigationOptions: {
+      title: 'Settings',
+    },
+  },
+});
+
 export const Root = StackNavigator({
   Tabs: {
     screen: Tabs,
   },
   Settings: {
-    screen: Settings,
+    screen: SettingsStack,
   },
 }, {
   mode: 'modal',
