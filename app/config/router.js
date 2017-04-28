@@ -7,9 +7,18 @@ import Settings from '../screens/Settings';
 import UserDetail from '../screens/UserDetail';
 import Me from '../screens/Me';
 
-export const Tabs = TabNavigator({
+export const FeedStack = StackNavigator({
   Feed: {
     screen: Feed,
+  },
+  Details: {
+    screen: UserDetail,
+  },
+});
+
+export const Tabs = TabNavigator({
+  Feed: {
+    screen: FeedStack,
     navigationOptions: {
       tabBar: {
         label: 'Feed',
